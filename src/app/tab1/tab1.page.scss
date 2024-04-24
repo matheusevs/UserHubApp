@@ -1,0 +1,63 @@
+:root {
+    --perfil-color-fundo1: #0275d8;
+}
+
+.label-padrao {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin-left: 27%;
+}
+
+.input {
+    margin-left: 10px;
+}
+
+.input-padrao {
+    width: 80%;
+    font-size: 16px;
+    color: #161616;
+    letter-spacing: 0;
+    font-weight: 600;
+    border-radius: 4px;
+    --background: #d9d9d9;
+    --highlight-color-focused: transparent;
+    --highlight-color-valid: transparent;
+    --highlight-color-invalid: transparent;
+}
+
+.row {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.button-entrar {
+    --background: var(#0275d8, 100%);
+    --background-focused: var(#0275d8, 100%);
+    --background-hover: var(#0275d8, 100%);
+    border-radius: 4px;
+    width: 80%;
+    font-size: 16px;
+    color: var(#fff, 100%);
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: inherit;
+    font-weight: 600;
+    height: 45px;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+.div-button {
+    height: 60px;
+}

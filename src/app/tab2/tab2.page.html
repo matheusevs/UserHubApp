@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            <ion-grid fixed>
+                <ion-row>
+                    <ion-col size="6">
+                        UserHub App
+                    </ion-col>
+                    <ion-col size="1" offset="5">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <div class="div-title">
+        <ion-title size="large">
+            Listagem de usuários
+            <ion-icon name="people-outline"></ion-icon>
+          </ion-title>
+    </div>
+
+    <table class="ionic-table">
+        <thead>
+            <tr>
+                <th class="nome-col">Nome</th>
+                <th class="email-col">Email</th>
+                <th class="acoes-col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td class="nome-col">{{ usuario.nome }}</td>
+                <td class="email-col">{{ usuario.email }}</td>
+                <td class="acoes-col">
+                    <ion-button color="primary" size="small"><ion-icon name="create"></ion-icon></ion-button>
+                    <ion-button color="danger" size="small"><ion-icon name="trash"></ion-icon></ion-button>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+
+</ion-content>

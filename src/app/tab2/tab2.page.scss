@@ -1,0 +1,34 @@
+.div-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.ionic-table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    th, td {
+        border: 1px solid #dee2e6;
+        padding: 8px;
+        text-align: left;
+    }
+  
+    th {
+        background-color: #f4f4f4;
+    }
+
+    .nome-col {
+        width: 35%;
+    }
+
+    .email-col {
+        width: 35%;
+    }
+
+    .acoes-col {
+        width: 30%;
+        text-align: center;
+    }
+  }
