@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Storage } from '@ionic/storage-angular';
+import { StorageService } from '../services/storage/storage.service';
 
 @Component({
     selector: 'app-tab1',
@@ -8,26 +8,25 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class Tab1Page {
 
-    public nome: string = '';
-    public telefone: string = '';
+    public name: string = '';
+    public telephone: string = '';
     public email: string = '';
-    public usuarios: any = [];
+    public users: any = [];
 
     constructor(
-        private storage: Storage,
-    ) {
-        this.storage.create();
-        this.storage.get('usuarios').then(async (usuarios) => {
-            if (usuarios) {
-                this.usuarios = usuarios;
-            }
-        });
+        private storageService: StorageService,
+    ) {}
+
+    async ionViewDidEnter()
+    {
+        this.users = await this.storageService.get('users');
     }
 
-    adicionarUsuario() {
-        const id = btoa(unescape(encodeURIComponent(`${this.nome}-${this.telefone}-${this.email}`)));
-        this.usuarios.push({id: id, nome: this.nome, telefone: this.telefone, email: this.email});
-        this.storage.set('usuarios', this.usuarios);
+    async addUser()
+    {
+        const id = btoa(unescape(encodeURIComponent(`${this.name}-${this.telephone}-${this.email}`)));
+        this.users.push({id: id, name: this.name, telephone: this.telephone, email: this.email});
+        await this.storageService.set('users', this.users);
     }
 
 }

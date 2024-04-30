@@ -23,18 +23,18 @@
           </ion-title>
     </div>
     
-    <form (ngSubmit)="adicionarUsuario()">
+    <form (ngSubmit)="addUser()">
         <ion-row class="row">
             <ion-item class="input-padrao">
                 <ion-icon name="person-add-outline"></ion-icon>
-                <ion-input class="input" name="nome" type="text" [(ngModel)]="nome" ngModel required placeholder="Digite o nome"></ion-input>
+                <ion-input class="input" name="name" type="text" [(ngModel)]="name" ngModel required placeholder="Digite o nome"></ion-input>
             </ion-item>
         </ion-row>
 
         <ion-row class="row">
             <ion-item class="input-padrao">
                 <ion-icon name="call-outline"></ion-icon>
-                <ion-input class="input" name="telefone" type="text" [(ngModel)]="telefone" ngModel required placeholder="Digite o telefone"></ion-input>
+                <ion-input class="input" name="telephone" type="text" [(ngModel)]="telephone" ngModel required placeholder="Digite o telefone"></ion-input>
             </ion-item>
         </ion-row>
 
@@ -46,7 +46,7 @@
         </ion-row>
 
         <ion-row class="div-button">
-            <ion-button class="button-entrar" type="submit" [disabled]="!nome || !telefone || !email" expand="block">Adicionar</ion-button>
+            <ion-button class="button-entrar" type="submit" [disabled]="!name || !telephone || !email" expand="block">Adicionar</ion-button>
         </ion-row>
     </form>
 </ion-content>
