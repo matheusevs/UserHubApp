@@ -32,15 +32,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let usuario of usuarios">
-                <td class="nome-col">{{ usuario.nome }}</td>
-                <td class="email-col">{{ usuario.email }}</td>
+            <tr *ngFor="let user of users">
+                <td class="nome-col">{{ user.name }}</td>
+                <td class="email-col">{{ user.email }}</td>
                 <td class="acoes-col">
-                    <ion-button color="primary" size="small"><ion-icon name="create"></ion-icon></ion-button>
-                    <ion-button color="danger" size="small"><ion-icon name="trash"></ion-icon></ion-button>
+                    <ion-button color="primary" size="small" (click)="editUserById(user.id)"><ion-icon name="create"></ion-icon></ion-button>
+                    <ion-button color="danger" size="small" (click)="deleteUserById(user.id)"><ion-icon name="trash"></ion-icon></ion-button>
                 </td>
             </tr>
         </tbody>
       </table>
 
 </ion-content>
+
+sonavoip3333214232

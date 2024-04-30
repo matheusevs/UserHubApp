@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
+import { StorageService } from '../services/storage/storage.service';
 
 @Component({
     selector: 'app-tab2',
@@ -8,17 +9,25 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class Tab2Page {
 
-    public usuarios: any = [];
+    public users: any = [];
 
     constructor(
-        private storage: Storage
-    ) {
-        this.storage.create();
-        this.storage.get('usuarios').then(async (usuarios) => {
-            if (usuarios) {
-                this.usuarios = usuarios;
-            }
-        })
+        private storageService: StorageService
+    ) {}
+
+    async ionViewDidEnter()
+    {
+        this.users = await this.storageService.get('users');
+    }
+
+    async editUserById(id: number)
+    {
+        console.log(id)
+    }
+
+    async deleteUserById(id: string)
+    {
+        this.users = await this.storageService.remove('users', id);
     }
 
 }
