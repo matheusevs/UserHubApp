@@ -32,12 +32,17 @@ export class StorageService {
     {
         const users = await this.get(key);
         const filteredUsers = users.filter((user: any) => user.id !== id);
-        await this.set('users', filteredUsers);
+        await this.set(key, filteredUsers);
         return filteredUsers;
     }
 
-    async update(key: string, value: any)
+    async update(key: string, id: string, value: any)
     {
-        
+        const users = await this.get(key);
+        const index = users.findIndex((user: any) => user.id === id);
+        if (index !== -1) {
+            users[index] = value;
+            await this.set(key, users);
+        }
     }
 }

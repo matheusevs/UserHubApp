@@ -20,9 +20,11 @@ export class Tab2Page {
         this.users = await this.storageService.get('users');
     }
 
-    async editUserById(id: number)
+    async editUserById(id: string)
     {
         console.log(id)
+        // const user = {id: id, name: this.name, telephone: this.telephone, email: this.email};
+        // this.users = await this.storageService.update('users', id, user);
     }
 
     async deleteUserById(id: string)
