@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StorageService } from '../services/storage/storage.service';
+import { UserService } from '../services/api/user.service';
 
 @Component({
     selector: 'app-tab1',
@@ -14,19 +14,13 @@ export class Tab1Page {
     public users: any = [];
 
     constructor(
-        private storageService: StorageService,
+        private userService: UserService
     ) {}
-
-    async ionViewDidEnter()
-    {
-        this.users = await this.storageService.get('users');
-    }
 
     async addUser()
     {
-        const id = btoa(unescape(encodeURIComponent(`${this.name}-${this.telephone}-${this.email}`)));
-        this.users.push({id: id, name: this.name, telephone: this.telephone, email: this.email});
-        await this.storageService.set('users', this.users);
+        let user = {name: this.name, telephone: this.telephone, email: this.email};
+        let retorno = await this.userService.createUser(user);
+        console.log(retorno);
     }
-
 }
