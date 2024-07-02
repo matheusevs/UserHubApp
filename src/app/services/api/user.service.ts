@@ -15,6 +15,10 @@ export class UserService {
         return this.http.get(`${this.hostApi}/getUsers`).toPromise();
     }
 
+    async editUser(id: string) {
+        return this.http.get(`${this.hostApi}/editUser/${id}`).toPromise();
+    }
+
     async createUser(user: any) {
         return this.http.post(`${this.hostApi}/createUser`, user).toPromise();
     }
@@ -23,7 +27,7 @@ export class UserService {
         return this.http.delete(`${this.hostApi}/deleteUser/${id}`).toPromise();
     }
 
-    async editUser(id: string, user: any) {
-        return this.http.put(`${this.hostApi}/editUser/${id}`, user).toPromise();
+    async updateUser(id: string, user: any) {
+        return this.http.put(`${this.hostApi}/updateUser/${id}`, user).toPromise();
     }
 }

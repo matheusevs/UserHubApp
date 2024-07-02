@@ -8,10 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { EditUserModalComponent } from './edit-user-modal/edit-user-modal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), HttpClientModule],
+  declarations: [AppComponent, EditUserModalComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), HttpClientModule, FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
